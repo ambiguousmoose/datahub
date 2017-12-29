@@ -1,0 +1,109 @@
+/* ------------------------------------------------------------------------
+Legal Disclaimer
+These Fonts are licensed only for use on these domains and their subdomains:
+kcom.com
+It is illegal to download or use them on other websites.
+While the @font-face statements below may be modified by the client, this
+disclaimer may not be removed.
+ Lineto.com, 2016
+ ------------------------------------------------------------------------*/
+
+@font-face {
+    font-family: "Circular-Mediumitalic";
+    src:url("../fonts/lineto-circular-mediumitalic.eot");
+    src:url("../fonts/lineto-circular-mediumitalic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/lineto-circular-mediumitalic.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Circular-Bold";
+    src:url("../fonts/lineto-circular-bold.eot");
+    src:url("../fonts/lineto-circular-bold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/lineto-circular-bold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Circular-Black";
+    src:url("../fonts/lineto-circular-black.eot");
+    src:url("../fonts/lineto-circular-black.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/lineto-circular-black.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Circular-Bolditalic";
+    src:url("../fonts/lineto-circular-bolditalic.eot");
+    src:url("../fonts/lineto-circular-bolditalic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/lineto-circular-bolditalic.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Circular-Book";
+    src:url("../fonts/lineto-circular-book.eot");
+    src:url("../fonts/lineto-circular-book.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/lineto-circular-book.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Circular-Medium";
+    src:url("../fonts/lineto-circular-medium.eot");
+    src:url("../fonts/lineto-circular-medium.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/lineto-circular-medium.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Circular-Blackitalic";
+    src:url("../fonts/lineto-circular-blackitalic.eot");
+    src:url("../fonts/lineto-circular-blackitalic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/lineto-circular-blackitalic.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Circular-Bookitalic";
+    src:url("../fonts/lineto-circular-bookitalic.eot");
+    src:url("../fonts/lineto-circular-bookitalic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/lineto-circular-bookitalic.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+$f-default: book;
+@mixin font-set($f: $f-default) {
+   @if $f == book {
+     font-family: "Circular-Book", Arial, sans-serif;
+   }
+   @if $f == book-italic {
+     font-family: "Circular-Book", Arial, sans-serif;
+   }
+   @if $f == medium {
+     font-family: "Circular-Medium", Arial, sans-serif;
+   }
+   @if $f == medium-italic {
+     font-family: "Circular-Mediumitalic", Arial, sans-serif;
+   }
+   @if $f == bold {
+     font-family: "Circular-Bold", Arial, sans-serif;
+   }
+   @if $f == bold-italic {
+     font-family: "Circular-Bolditalic", Arial, sans-serif;
+   }
+   @if $f == black {
+     font-family: "Circular-Black", Arial, sans-serif;
+   }
+   @if $f == black-italic {
+     font-family: "Circular-Blackitalic", Arial, sans-serif;
+   }
+}

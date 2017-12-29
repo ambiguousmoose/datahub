@@ -1,0 +1,97 @@
+/*--------------------
+Buttons
+--------------------*/
+
+$btn-fg: #fff !default;
+$btn-bg: $tangerine !default;
+$btn-bdr-color: darken($btn-bg, 5%) !default;
+$btn-bdr-width: 1px !default;
+$bdr-radius: 3px !default;
+
+@mixin btn-color($btn-fg: $btn-fg, $btn-bg: $btn-bg, $btn-bdr-color: $btn-bdr-color, $btn-bdr-width: $btn-bdr-width){
+    background-color: $btn-bg;
+    border-color: $btn-bdr-color;
+    color: $btn-fg;
+    border-width: $btn-bdr-width;
+    border-style: solid;
+
+    &:hover, &:focus, &:not:disabled {
+        background-color: darken($btn-bg, 8%);
+        color: $btn-fg;
+    }
+}
+
+$btn-large: .65em 1.25em;
+$btn-medium: .5em 1em;
+$btn-small: .25em .75em;
+$btn-margin: 0 0 .25em 0;
+$btn-lh: 1.5; 
+
+@mixin btn($btn-size: medium) {
+    @if $btn-size == medium {
+        @include border-radius($bdr-radius);
+        @include font-size(14);
+        line-height: $btn-lh; 
+        padding: $btn-medium;
+        margin: $btn-margin;
+        display: inline-block;
+        cursor: pointer;
+        }
+    @if $btn-size == small {
+        @include border-radius($bdr-radius);
+        @include font-size(13);
+        line-height: $btn-lh;
+        padding: $btn-small;
+        margin: $btn-margin;
+        display: inline-block;
+        cursor: pointer;
+        }
+    @if $btn-size == large {
+        @include border-radius($bdr-radius);
+        @include font-size(16);
+        line-height: $btn-lh;
+        padding: $btn-large;
+        margin: $btn-margin;
+        display: inline-block;
+        cursor: pointer;
+    }
+}
+
+.btn {
+    @include btn-color;
+
+    &:disabled {
+        @include btn-color(lighten($pine-cone, 20%), lighten($hint-of-grey, 2%), darken($hint-of-grey, 12%), 1px);
+        cursor: default;
+    }
+}
+
+.btn-secondary {
+    @include btn-color($pine-cone, lighten($hint-of-grey, 2%), darken($hint-of-grey, 12%), 1px);
+}
+
+.btn-green,
+.btn-secondary.current {
+    @include btn-color(#fff, darken($yellow-green, 15%), darken($yellow-green, 20%), 1px);
+}
+
+.btn-red {
+    @include btn-color(#fff, lighten($carnation, 5%), darken($carnation, 15%), 1px);
+}
+
+.btn-large {
+    @include btn(large);
+}
+
+.btn-small {
+    @include btn(small);
+}
+
+.btn-medium {
+    @include btn(medium);
+}
+
+.btn-full-width {
+    width: 100%;
+    text-align: center;
+}

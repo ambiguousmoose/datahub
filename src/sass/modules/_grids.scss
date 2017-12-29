@@ -1,0 +1,79 @@
+@mixin clear {
+  & {
+    zoom: 1;
+  }
+
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+// column: number == number of horizontal blocks
+// gap: number    == space between blocks
+// usage          == col($cols: number of columns, $gap: size of gap in %)
+//                == @include col(2, .5);
+$gap: .5% !default;
+@mixin col($cols, $gap) {
+  @include gutter($cols, $gap + 0%);
+  $total-gap: ($cols - 1) * $gap + 0%;
+  width: (100 - $total-gap) / $cols;
+  margin-right: $gap + 0%;
+  margin-bottom: $gap + 0%;
+  float: left;
+}
+
+@mixin gutter($colcount, $calcgap){
+  @if $colcount == 2 {
+    &:nth-child(2n+0) {
+      margin-right: 0;
+    }
+  }
+  @if $colcount == 3 {
+    &:nth-child(2n+0) {
+      margin-right: $calcgap;
+    }
+    &:nth-child(3n+0) {
+      margin-right: 0;
+    }
+    &:nth-child(4n+0) {
+      margin-right: $calcgap;
+    }
+    &:nth-child(5n+0) {
+      margin-right: $calcgap;
+    }
+  }
+  @if $colcount == 4 {
+    &:nth-child(2n+0) {
+      margin-right: $calcgap;
+    }
+    &:nth-child(3n+0) {
+      margin-right: $calcgap;
+    }
+    &:nth-child(4n+0) {
+      margin-right: 0;
+    }
+    &:nth-child(5n+0) {
+      margin-right: $calcgap;
+    }
+  }
+  @if $colcount == 5 {
+    &:nth-child(2n+0) {
+      margin-right: $calcgap;
+    }
+    &:nth-child(3n+0) {
+      margin-right: $calcgap;
+    }
+    &:nth-child(4n+0) {
+      margin-right: $calcgap;
+    }
+    &:nth-child(5n+0) {
+      margin-right: 0;
+    }
+  }
+}

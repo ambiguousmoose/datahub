@@ -1,0 +1,99 @@
+@mixin rotate($degrees) {
+    -webkit-transform: rotate($degrees);
+    -moz-transform: rotate($degrees);
+    -ms-transform: rotate($degrees);
+    -o-transform: rotate($degrees);
+    transform: rotate($degrees);
+}
+@mixin scale($scale) {
+    -webkit-transform: scale($scale);
+    -moz-transform: scale($scale);
+    -ms-transform: scale($scale);
+    -o-transform: scale($scale);
+    transform: scale($scale);
+}
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+@mixin animation($anims...) {
+    -webkit-animation: $anims;
+    -moz-animation: $anims;
+    animation: $anims;
+}
+@mixin duration($duration) {
+    -webkit-transition-duration: $duration;
+    -moz-transition-duration: $duration;
+    transition-duration: $duration;
+    -o-transition-duration: $duration;
+}
+@mixin rotate($deg) {
+    -webkit-transform: rotateZ($deg);
+    transform: rotateZ($deg);
+}
+@mixin shift-x($xpos){
+    -ms-transform: translateX($xpos); // IE 9
+    -webkit-transform: translateX($xpos); // Safari
+    transform: translateX($xpos);
+}
+@mixin shift-y($ypos){
+    -ms-transform: translateY($ypos); // IE 9
+    -webkit-transform: translateY($ypos); // Safari
+    transform: translateY($ypos);
+}
+@mixin shift($xpos, $ypos) {
+    -ms-transform: translate($xpos, $ypos); // IE 9
+    -webkit-transform: translate($xpos, $ypos); // Safari
+    transform: translate($xpos, $ypos);
+}
+
+// Animations
+@keyframes bounce {
+    0% {
+      @include shift(0, 0);
+    }50% {
+      @include shift(0, -3px);
+    }100% {
+      @include shift(0, 0);
+    }
+}
+
+@keyframes hitlight {
+    0% {
+      @include box-shadow(0 0 0 24px rgba(0, 0, 0, 0) inset);
+    }100% {
+      @include box-shadow(0 0 0 0 rgba(82, 72, 72, 0.2) inset);
+    }
+}
+
+@keyframes lift-drop {
+  0% {
+    @include shift(0, 0);
+  }50% {
+    @include shift(0, -20px);
+  }100% {
+    @include shift(0, 60px);
+    opacity: 0;
+  }
+}
+
+@keyframes drop-in {
+  0% {
+    @include shift(0, -40px);
+  }100% {
+    @include shift(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes drop-out {
+  0% {
+    @include shift(0, 0);
+  }100% {
+    @include shift(0, 60px);
+    opacity: 0;
+  }
+}

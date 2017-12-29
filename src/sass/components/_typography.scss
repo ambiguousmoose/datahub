@@ -1,0 +1,54 @@
+strong,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include font-set(book);
+  font-weight: normal;
+  line-height: 1;
+  }
+
+h1 {
+  @include font-size(22);
+  @include respond-to(small-2) {
+    @include font-size(26);
+  }
+  margin-bottom: .5em;
+  margin-left: -3px;
+  color: currentColor;
+}
+
+h2 {
+  @include font-size(18);
+  @include respond-to(small-2) {
+    @include font-size(22);
+  }
+  color: currentColor;
+}
+
+h3 {
+  @include font-set(bold);
+  @include font-size(14);
+  @include respond-to(small-2) {
+    @include font-size(16);
+  }
+  color: currentColor;
+}
+
+h4 {
+  @include font-set(bold);
+  @include font-size(14);
+  @include respond-to(small-2) {
+    @include font-size(16);
+  }
+  color: currentColor;
+}
+
+p {
+  @include font-set(book);
+  @include font-size(14);
+  color: lighten($pine-cone, 10%);
+  line-height: 1.3;
+}

@@ -1,0 +1,39 @@
+.context-search {
+    @include respond-to(medium) {
+        width: 15em;
+        float: right;
+        margin-top: -2.5em;
+    }
+
+    width: 100%;
+    position: relative;
+
+    label {
+        @extend %hide-reader-friendly;
+    }
+
+    input {
+        @include respond-to(medium) {
+            margin: 0;
+        }
+        margin: 0 0 1em 0;
+    }
+
+    &::before {
+        @extend %icon;
+        @include font-size(20);
+        @include respond-to(medium) {
+            bottom: .125em;
+        }
+        margin-right: .1em;
+        content: '\e91f';
+        display: block;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        bottom: .7em;
+        right: 0;
+        color: lighten($schooner, 20%);
+        z-index: 2;
+      }
+}

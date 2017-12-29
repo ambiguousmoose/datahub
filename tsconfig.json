@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "noImplicitAny": true,
+        "sourceMap": true
+    },
+    "files": [
+        "./src/ts/tooltips.ts",
+        "./src/ts/header.ts",
+        "./src/ts/main.ts"
+    ]
+}

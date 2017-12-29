@@ -1,0 +1,49 @@
+.toast{
+    @include transition(transform .5s ease-in-out, opacity .5s ease-in-out);
+    @include box-shadow(3px 3px 3px rgba(65, 50, 50, 0.2));
+    opacity: 0;
+    position: absolute;
+    display: block;
+    margin: 0 5%;
+    padding: .75em .75em .75em 2.75em;
+    line-height: 1.1;
+    left: 0;
+    top: 20%;
+    width: 90%;
+    background-color: lighten($yellow-green, 20%);
+    z-index: 4;
+
+    &:before {
+        @extend %icon;
+        @include font-size(18);
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-right: 0;
+        position: absolute;
+        top: .5em;
+        left: .75em;
+    }
+
+    &.success {
+        background-color: lighten($yellow-green, 20%);
+        color: darken($yellow-green, 30%);
+
+        &:before {
+            content: '\e969';
+            color: darken($yellow-green, 25%);
+        }
+    }
+    &.fail {
+        background-color: lighten($lipstickred, 30%);
+
+        &:before {
+            content: '\e99f';
+            color: darken($carnation, 5%);
+        }
+    }
+    &.on {
+        @include animation(drop-in .5s cubic-bezier(.45,.08,.44,1.27));
+        opacity: 1;
+    }
+}
